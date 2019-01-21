@@ -1,11 +1,10 @@
-package Chapter1ArrayAndString;
+package crackingCodingInterview.Chapter1ArrayAndString;
 
 public class CompressString {
     public static void main(String[] args) {
         String src = "aabbbcccacacacaca";
         String compressed = compress(src);
         System.out.println(compressed);
-
     }
 
     static String compress(String src){

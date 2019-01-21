@@ -1,4 +1,4 @@
-package Chapter1ArrayAndString;
+package crackingCodingInterview.Chapter1ArrayAndString;
 
 import org.jetbrains.annotations.NotNull;
 
