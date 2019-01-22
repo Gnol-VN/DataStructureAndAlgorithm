@@ -6,7 +6,7 @@ import crackingCodingInterview.Chapter1ArrayAndString.UniqueCharacter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestGenerics<E> {
+public class TestGenerics1<E> {
     void takeSomething(E ttt){
 
     }
@@ -14,12 +14,13 @@ public class TestGenerics<E> {
     <M> List<Object> take3(M m){
         return new ArrayList<>();
     }
-    TestGenerics<CompressString> compressStringTestGenerics = new TestGenerics<>();
+    TestGenerics1<CompressString> compressStringTestGenerics = new TestGenerics1<>();
 
 
     public static void main(String[] args) {
-        TestGenerics<Object> testGenerics = new TestGenerics<>();
+        TestGenerics1<Object> testGenerics = new TestGenerics1<>();
         testGenerics.takeSomething(new UniqueCharacter());
     }
 
 }
+
