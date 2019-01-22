@@ -58,6 +58,16 @@ class Song implements Comparable<Song> {
         //or
 //        return this.title.compareTo(o.title);
     }
+
+    public boolean equals(Object obj) {
+        Song compareSong = (Song) obj;
+        return (this.title.equals(compareSong.title));
+    }
+
+    public int hashCode(){
+        return title.hashCode();
+    }
+
 }
 
 class SingerComparator implements Comparator<Song>{
