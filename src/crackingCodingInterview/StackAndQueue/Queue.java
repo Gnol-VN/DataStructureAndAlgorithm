@@ -1,5 +1,10 @@
 package crackingCodingInterview.StackAndQueue;
 
+
+/**
+ * Head 5 <- 4 <- 3 <- 2 <- 1 Tail
+ * Method: enqueue, dequeue
+ */
 public class Queue {
     private static class Node{
         Node next;

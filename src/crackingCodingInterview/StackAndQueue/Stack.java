@@ -1,5 +1,14 @@
 package crackingCodingInterview.StackAndQueue;
 
+/**
+ * Top 3
+ *   ↓
+ *   2
+ *   ↓
+ *   1
+ *
+ *  Method: Pop, push, peek
+ */
 public class Stack {
     private static class Node{
         Node next;

@@ -4,6 +4,8 @@ package crackingCodingInterview.Chapter4TreeAndGraph;
  * Binary search tree vs binary tree
  * Balance tree vs Unbalanced tree: Balance: the middle value is at the root
  * Do not assume a tree is a perfect tree (number of nodes are exact 2^k - 1
+ * Method: Insert, contains, print in-order, preorder, postorder
+ * Mấu chốt: check xem Node.left có null hay ko? Node.right có null hay ko?
  */
 public class NormalTree {
     public static Boolean aBoolean = false;
