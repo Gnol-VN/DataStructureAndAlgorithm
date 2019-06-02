@@ -1,6 +1,5 @@
 package headFirstJava.javaCollection;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +49,7 @@ class Song implements Comparable<Song> {
     }
 
     @Override
-    public int compareTo(@NotNull Song o) {
+    public int compareTo( Song o) {
         if (this.title.charAt(0) > o.title.charAt(0)) return 1;
         else if (this.title.charAt(0) < o.title.charAt(0)) return -1;
         else return 0;
