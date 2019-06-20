@@ -2,7 +2,7 @@ package crackingCodingInterview.Chapter10SortingAndSearching;
 
 public class bubbleSort {
     public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = {5,4,1,2,3,0,-1,6,-8};
         int n = arr.length;
 
         for (int i = 0; i < n-1; i++) {
@@ -25,7 +25,7 @@ public class bubbleSort {
     public static void printarr(int[] arr){
         int n = arr.length;
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i]);
+            System.out.print(arr[i]+" ");
 
         }
         System.out.println();
