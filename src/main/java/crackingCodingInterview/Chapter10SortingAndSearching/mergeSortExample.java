@@ -8,30 +8,37 @@ package crackingCodingInterview.Chapter10SortingAndSearching;
  * 4. Merge two halves
  */
 class MergeSort {
-    void sort(int arr[], int l, int r) {
-        if (r > l) {
-            int m = (r + l) / 2;
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-            merge(arr, l, m, r);
+    void sort(int arr[], int left, int right)
+    {
+        if (left < right)
+        {
+            // Find the middle point
+            int mid = (left+right)/2;
+
+            // Sort first and second halves
+            sort(arr, left, mid);
+            sort(arr , mid+1, right);
+
+            // Merge the sorted halves
+            merge(arr, left, mid, right);
         }
     }
 
-    void merge(int arr[], int l, int m, int r) {
+    void merge(int arr[], int left, int mid, int right) {
         //Find sizes of two sub arrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
 
         //Create temp arrays
-        int[] tempArr1 = new int[n1];
-        int[] tempArr2 = new int[n2];
+        int[] leftTemp = new int[n1];
+        int[] rightTemp = new int[n2];
 
         //Copy data to temp arrays
         for (int i = 0; i < n1; i++) {
-            tempArr1[i] = arr[l + i];
+            leftTemp[i] = arr[left + i];
         }
-        for (int i = 0; i < n2; i++) {
-            tempArr2[i] = arr[m + 1 + i];
+        for (int j = 0; j < n2; j++) {
+            rightTemp[j] = arr[mid + 1 + j];
         }
 
         //Merge the temp arrays
@@ -39,27 +46,27 @@ class MergeSort {
         //Init indexs of 1st and 2st sub arrays
         int i = 0, j =0;
         //Init index of merged sub array
-        int k = 1;
+        int k = left;
         while(i<n1 && j<n2){
-            if(tempArr1[i] <= tempArr2[j]){
-                arr[k] = tempArr1[i];
+            if(leftTemp[i] <= rightTemp[j]){
+                arr[k] = leftTemp[i];
                 i++;
             }
             else{
-                arr[k] = tempArr2[j];
+                arr[k] = rightTemp[j];
                 j++;
             }
             k++;
         }
         //Copy remaining elemetns of temp1 if any
         while(i<n1){
-            arr[k] = tempArr1[i];
+            arr[k] = leftTemp[i];
             i++;
             k++;
         }
         //Copy remaining elemetns of temp2 if any
         while(j<n2){
-            arr[k] = tempArr2[j];
+            arr[k] = rightTemp[j];
             j++;
             k++;
         }
