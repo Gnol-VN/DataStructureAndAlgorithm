@@ -21,7 +21,7 @@ public class FractionalKnapsack {
             else return 1;
         });
         //take from smallest ratio to highest, until cannot take more, then break it
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i  < n; i++) {
             if(capacity - itemList[i].weight >0 ){
                 //take
                 capacity = capacity - itemList[i].weight;
