@@ -30,7 +30,7 @@ public class FractionalKnapsack {
                 //Break the product's weight to fit the remainder of the knapsack
                 //After breaking, add the corresponding value
                 double brokenValue = (Double.valueOf(capacity) / Double.valueOf(itemList[i].weight)) * itemList[i].value;
-                knapSackValue = knapSackValue + brokenValue;
+                knapSackValue +=  brokenValue;
                 capacity = 0;
 
             }
