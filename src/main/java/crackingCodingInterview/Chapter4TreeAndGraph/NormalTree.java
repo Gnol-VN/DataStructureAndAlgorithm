@@ -1,6 +1,7 @@
 package crackingCodingInterview.Chapter4TreeAndGraph;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Binary search tree vs binary tree
@@ -96,6 +97,16 @@ public class NormalTree {
                 }else return leftHeight+1;
             }
         }
+        public void BFS(){
+            Queue<Node> queue = new LinkedList<>();
+            Node tempNode = this;
+            while(tempNode!= null){
+                System.out.print(tempNode.value+" ");
+                queue.add(tempNode.left);
+                queue.add(tempNode.right);
+                tempNode = queue.poll();
+            }
+        }
 
     }
     public static void main(String[] args) {
@@ -107,7 +118,6 @@ public class NormalTree {
         node.insert(7);
         node.insert(6);
         node.insert(8);
-        node.insert(1);
         System.out.println(node.contains(5));
         System.out.println(node.contains(6));
         System.out.println(node.contains(10));
@@ -120,7 +130,8 @@ public class NormalTree {
         node.printPostOrder();
         System.out.println();
         System.out.println(Node.height(node));
-
+        System.out.println();
+        node.BFS();
 
     }
 }

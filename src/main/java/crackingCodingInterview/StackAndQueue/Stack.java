@@ -1,6 +1,5 @@
 package crackingCodingInterview.StackAndQueue;
 
-import Acme.JPM.Encoders.GifEncoder;
 
 /**
  * Top 3
@@ -15,7 +14,6 @@ public class Stack {
     private static class Node{
         Node next;
         int value;
-        int a = GifEncoder.COMPLETESCANLINES;
 
 
         public Node(int value) {
