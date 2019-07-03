@@ -11,7 +11,7 @@ package crackingCodingInterview.StackAndQueue;
  *  Method: Pop, push, peek
  */
 public class Stack {
-    private static class Node{
+    private  class Node{
         Node next;
         int value;
 
@@ -45,7 +45,12 @@ public class Stack {
         stack.push(3);
         stack.push(8);
         stack.push(7);
-        System.out.println(stack);
+        Node node = stack.top;
+        while(node!=null){
+            System.out.print(node.value+" ");
+            node = node.next;
+        }
+        System.out.println();
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.pop());

@@ -20,7 +20,7 @@ public class Queue {
 
     public void enqueue(int value){
         Node node = new Node(value);
-        if(tail == null){
+        if(head == null){
             tail = node;
             head = node;
         }else{

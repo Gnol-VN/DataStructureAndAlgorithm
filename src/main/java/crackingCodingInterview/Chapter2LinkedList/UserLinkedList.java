@@ -21,7 +21,6 @@ public class UserLinkedList {
         if(head == null){
             Node node = new Node(value);
             head = node;
-            return;
         }
         else{
             Node walkingNode = head;
@@ -34,15 +33,11 @@ public class UserLinkedList {
     }
 
     public void prepend(int value){
-        if(head == null){
-            Node node = new Node(value);
-            head = node;
-            return;
-        }else {
+
             Node node = new Node(value);
             node.next = head;
             head = node;
-        }
+
     }
 
     public void deleteWithValue(int value){
@@ -58,17 +53,32 @@ public class UserLinkedList {
                 walkingNode = walkingNode.next;
             }
         }
-
     }
 
+    public int findNthElement(int n){
+        if(head == null) return -1;
+        else{
+            Node walkingNode = head;
+            for (int i = 0; i < n; i++) {
+                if(walkingNode.next == null)
+                    return -1;
+                else walkingNode = walkingNode.next;
+            }
+            return walkingNode.value;
+        }
+    }
     public static void main(String[] args) {
         UserLinkedList userLinkedList = new UserLinkedList();
+
+        userLinkedList.append(-1);
         userLinkedList.append(1);
         userLinkedList.append(2);
         userLinkedList.append(3);
         userLinkedList.prepend(0);
-        userLinkedList.deleteWithValue(2);
+//        userLinkedList.deleteWithValue(3);
         System.out.println("Done");
+        System.out.println(userLinkedList.findNthElement(2));
+
 
     }
 }
