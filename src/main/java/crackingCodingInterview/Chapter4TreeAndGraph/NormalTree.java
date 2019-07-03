@@ -1,5 +1,7 @@
 package crackingCodingInterview.Chapter4TreeAndGraph;
 
+import java.util.LinkedList;
+
 /**
  * Binary search tree vs binary tree
  * Balance tree vs Unbalanced tree: Balance: the middle value is at the root
@@ -12,13 +14,13 @@ public class NormalTree {
     private static class Node {
         Node left;
         Node right;
-        double value;
+        int value;
 
-        public Node(double value) {
+        public Node(int value) {
             this.value = value;
         }
 
-        public void insert(double value) {
+        public void insert(int value) {
             if (this.value > value) {
                 if (this.left == null) {
                     this.left = new Node(value);
@@ -82,19 +84,33 @@ public class NormalTree {
 
         }
 
+        public static int height(Node node){
+            if(node == null){
+                return 0;
+            }else{
+                int leftHeight = height(node.left);
+                int rightHeight = height(node.right);
+
+                if (leftHeight <= rightHeight) {
+                    return rightHeight +1;
+                }else return leftHeight+1;
+            }
+        }
+
     }
     public static void main(String[] args) {
         Node node = new Node(5);
         node.insert(3);
+//        node.insert(1);
         node.insert(2);
-        node.insert(2.5);
         node.insert(4);
         node.insert(7);
         node.insert(6);
         node.insert(8);
+        node.insert(1);
         System.out.println(node.contains(5));
         System.out.println(node.contains(6));
-        System.out.println(node.contains(1));
+        System.out.println(node.contains(10));
         System.out.println(node.contains(3));
         System.out.println("Done");
         node.printInOrder();
@@ -102,6 +118,8 @@ public class NormalTree {
         node.printPreOrder();
         System.out.println();
         node.printPostOrder();
+        System.out.println();
+        System.out.println(Node.height(node));
 
 
     }
