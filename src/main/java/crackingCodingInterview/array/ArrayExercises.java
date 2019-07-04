@@ -7,10 +7,12 @@ import java.util.*;
 public class ArrayExercises {
     public static void main(String[] args) throws Exception {
         int[] arr = {1,2,3,4,5,6};
+        int[] arr3 = {1,2,3,4,5,6,7};
         int[] arr2 = {1,3,5,4,6,7,32,4,68,8};
         System.out.println(mostFrequent(arr));
         System.out.println(Arrays.toString(commonElement(arr,arr2)));
         System.out.println(Arrays.toString(shiftArray(arr,2)));
+        System.out.println(Arrays.toString(rotate(arr3)));
     }
 
     //    Ex1: Most frequent element in array
@@ -72,6 +74,15 @@ public class ArrayExercises {
             else{
                 arr[i+s-arr.length] = copyArr[i];
             }
+        }
+        return arr;
+    }
+    static int[] rotate(int[] arr){
+        if(arr.length ==0) return arr;
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
         }
         return arr;
     }
