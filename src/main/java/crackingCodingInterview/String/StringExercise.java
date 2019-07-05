@@ -145,6 +145,8 @@ public class StringExercise {
                 listCommon.add(str1.substring(startIndex, endIndex));
             }
         }
+
+        System.out.println();
         System.out.println();
 
     }
