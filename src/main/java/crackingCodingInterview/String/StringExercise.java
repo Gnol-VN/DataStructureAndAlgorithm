@@ -13,8 +13,8 @@ public class StringExercise {
         System.out.println(oneEdit("Geesf","Geeksf"));
         System.out.println(oneEdit("Peak","Geek"));
         System.out.println(oneEdit("Peek","Geek"));
-
         longestCommon("abcdefghi","badefgab");
+        System.out.println("Palindrome: " + isPalindrome(19991));
     }
 
     static char nonRepChar(String str){
@@ -139,7 +139,6 @@ public class StringExercise {
             for (int j = 0; j < str2.length(); j++) {
                 boolean flag = false; //increase performance
                 int m = i, n = j;
-                int startIndex = i, endIndex = j;
                 while(str1.charAt(m) == str2.charAt(n)){
                     flag = true;
                     m++;
@@ -147,14 +146,26 @@ public class StringExercise {
                     if(m>str1.length() -1 || n > str2.length()-1) break;
                 }
                 if(flag == false) continue;
-                endIndex = m;
-                listCommon.add(str1.substring(startIndex, endIndex));
+                listCommon.add(str1.substring(i, m));
             }
         }
 
         System.out.println();
         System.out.println();
 
+    }
+
+    static boolean isPalindrome(int n){
+        if(n<2) return false;
+        for (int i = 2; i < n; i++) {
+            if(n%i == 0) return false;
+        }
+        String str = String.valueOf(n);
+        char[] charArr = str.toCharArray();
+        for (int i = 0; i < charArr.length/2; i++) {
+            if(charArr[i] != charArr[charArr.length-i-1]) return false;
+        }
+        return true;
     }
 
 }
