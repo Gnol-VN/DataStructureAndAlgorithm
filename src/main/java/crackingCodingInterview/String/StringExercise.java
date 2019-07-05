@@ -52,6 +52,7 @@ public class StringExercise {
                 if(str.charAt(i) == str.charAt(j)){
                     existed = true;
                     break;
+
                 }
             }
             if(existed == false) return str.charAt(i);
@@ -83,7 +84,9 @@ public class StringExercise {
         }
     }
     static boolean oneEdit(String str1, String str2){
+        //Nếu giống nhau thì return luôn false
         if(str1.equals(str2)) return false;
+        //String2 is always longer than String1 for better manipulation
         if(str1.length() > str2.length()){
             String temp = str1;
             str1 = str2;
@@ -93,30 +96,33 @@ public class StringExercise {
         int n = str2.length() > str1.length()? str2.length():str1.length();
         if(str2.length() - str1.length() > 1) return  false;
         for (int i = 0; i < n; i++) {
+            //Nếu chạy đến length - 1 thì 100% là one edit, bởi vì đã loại trường hợp 2 string giống hệt nhau, suy ra ký tự cuối chắc chắn khác nhau
             if(i == str1.length()-1) return true;
+
+            //So sánh từng chữ đôi một  trong 2 string
             if(str1.charAt(i) != str2.charAt(i)){
                 if(i == str1.length()-1) return true;
+                //Nếu độ dài bằng nhau -> chắc chắn sai 1 chữ -> phủ tất cả các chữ từ 0 đến i giống hệt nhau ở 2 string, rồi tiếp tục kiểm tra từ i đến hết
                 if(str1.length() == str2.length()){
+                    //Lấy phần rightside của string1 từ vị trí conflict i
+//                    string 1 = copy string 2 từ đầu 0 đến vị trí conflict +1
+//                            sau đó ghép str1 với right side
                     String rightside= str1.substring(i+1);
                     str1 = str2.substring(0,i+1);
                     str1 = str1.concat(rightside);
                     editTimes++;
                     if(editTimes > 1) return false;
                 }
-                else if (str1.charAt(i + 1) == str2.charAt(i + 2)) {
+
+                //Nếu độ dài không bằng nhau -> thiếu 1 chữ, chèn vào
+                else if (str1.charAt(i ) == str2.charAt(i + 1)) {
                     String rightside = str1.substring(i);
                     str1 = str2.substring(0, i+1);
                     str1= str1.concat(rightside);
                     editTimes++;
                     if(editTimes > 1) return false;
                 }
-                else{
-                    String rightside = str1.substring(i+1);
-                    str1 = str2.substring(0, i+1);
-                    str1=str1.concat(rightside);
-                    editTimes++;
-                    if(editTimes > 1) return false;
-                }
+
             }
         }
         if(editTimes > 1) return false;
