@@ -1,9 +1,6 @@
 package crackingCodingInterview.String;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StringExercise {
     public static void main(String[] args) {
@@ -15,6 +12,7 @@ public class StringExercise {
         System.out.println(oneEdit("Peek","Geek"));
         longestCommon("abcdefghi","badefgab");
         System.out.println("Palindrome: " + isPalindrome(19991));
+
     }
 
     static char nonRepChar(String str){

@@ -9,6 +9,12 @@ public class TreeSetExample {
         Book b2 = new Book("Clean Code");
         Book b3 = new Book("UML introduction");
         TreeSet<Book> treeSet = new TreeSet<Book>();
+        TreeSet<Book> t1reeSet = new TreeSet<Book>(new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                return 0;
+            }
+        });
 //        TreeSet<Book> treeSet = new TreeSet<Book>(new BookComparator());
         treeSet.add(b1);
         treeSet.add(b2);
