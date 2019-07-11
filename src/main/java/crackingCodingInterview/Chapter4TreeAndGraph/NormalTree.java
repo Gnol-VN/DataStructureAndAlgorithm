@@ -110,11 +110,15 @@ public class NormalTree {
             }
         }
 
+
+
+
     }
+    static Queue<Node> queue = new LinkedList<>();
     public static void main(String[] args) {
         Node node = new Node(5);
         node.insert(3);
-        node.insert(1);
+//        node.insert(1);
         node.insert(2);
         node.insert(4);
         node.insert(7);
@@ -134,7 +138,26 @@ public class NormalTree {
         System.out.println(Node.height(node));
         System.out.println();
         node.BFS();
+        System.out.println();
+        System.out.println("BFS1 walk");
+        BFS1(node);
 
+    }
+    public static void BFS1(Node node){
+        walk(node);
+        while(!queue.isEmpty()){
+            walk(queue.poll());
+        }
+    }
+
+    public static void walk(Node node){
+        System.out.print(node.value);
+        if(node.left != null){
+            queue.add(node.left);
+        }
+        if(node.right != null){
+            queue.add(node.right);
+        }
     }
 }
 
