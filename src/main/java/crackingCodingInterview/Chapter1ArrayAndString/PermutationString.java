@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class PermutationString {
     public static void main(String[] args) {
-        System.out.println(isPermutation("long", "gnol"));
+        System.out.println(isPermutation("lonoog", "gnoloom"));
     }
 
     static boolean isPermutation(String s1, String s2){
