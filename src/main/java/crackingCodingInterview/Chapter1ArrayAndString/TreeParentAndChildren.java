@@ -16,7 +16,7 @@ public class TreeParentAndChildren {
     }
     static int findRoot(int[][] tree){
         if(tree.length == 0) return -1;
-        if(tree[0].length != 2) return -1;
+        if(tree[0].length != 2) return -1;;
 
         int n = tree.length;
         int m = tree[0].length;
