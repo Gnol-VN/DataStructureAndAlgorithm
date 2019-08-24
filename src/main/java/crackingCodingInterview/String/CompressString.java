@@ -1,4 +1,4 @@
-package crackingCodingInterview.Chapter1ArrayAndString;
+package crackingCodingInterview.String;
 
 public class CompressString {
     public static void main(String[] args) {

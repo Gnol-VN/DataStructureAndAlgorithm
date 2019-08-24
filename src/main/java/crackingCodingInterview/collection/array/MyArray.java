@@ -1,6 +1,5 @@
-package crackingCodingInterview.array;
+package crackingCodingInterview.collection.array;
 
-import com.sun.deploy.util.ArrayUtil;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.ArrayList;

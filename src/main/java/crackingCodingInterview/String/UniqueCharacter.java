@@ -1,4 +1,4 @@
-package crackingCodingInterview.Chapter1ArrayAndString;
+package crackingCodingInterview.String;
 
 
 public class UniqueCharacter {

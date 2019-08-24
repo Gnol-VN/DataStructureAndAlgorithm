@@ -1,6 +1,4 @@
-package crackingCodingInterview.array;
-
-import org.apache.commons.lang3.ArrayUtils;
+package crackingCodingInterview.collection.array;
 
 import java.util.*;
 

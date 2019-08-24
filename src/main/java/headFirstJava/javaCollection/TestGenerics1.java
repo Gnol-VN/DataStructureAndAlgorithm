@@ -1,7 +1,7 @@
 package headFirstJava.javaCollection;
 
-import crackingCodingInterview.Chapter1ArrayAndString.CompressString;
-import crackingCodingInterview.Chapter1ArrayAndString.UniqueCharacter;
+import crackingCodingInterview.String.CompressString;
+import crackingCodingInterview.String.UniqueCharacter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,6 @@
 package crackingCodingInterview.Chapter4TreeAndGraph;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Binary search tree vs binary tree
@@ -14,6 +11,7 @@ import java.util.Queue;
  */
 public class NormalTree {
     public static Boolean aBoolean = false;
+
     private static class Node {
         Node left;
         Node right;
@@ -39,21 +37,38 @@ public class NormalTree {
             }
         }
 
-        public boolean contains(int value) {
+        //        public boolean contains(int value) {
+//            if (this.value == value) {
+//                return true;
+//            } else {
+//                if (value < this.value) {
+//                    if (left == null) {
+//                        return false;
+//                    } else return left.contains(value);
+//                } else {
+//                    if (right == null) {
+//                        return false;
+//                    } else return right.contains(value);
+//                }
+//            }
+//        }
+        boolean contains(int value) {
             if (this.value == value) {
                 return true;
+            }
+            if (value < this.value) {
+                if (this.left != null) {
+                    return this.left.contains(value);
+                }
+
             } else {
-                if (value < this.value) {
-                    if (left == null) {
-                        return false;
-                    } else return left.contains(value);
-                } else {
-                    if (right == null) {
-                        return false;
-                    } else return right.contains(value);
+                if (this.right != null) {
+                    return this.right.contains(value);
                 }
             }
+            return false;
         }
+
 
         //Khong co else
         public void printInOrder() {
@@ -77,33 +92,34 @@ public class NormalTree {
         }
 
         public void printPostOrder() {
-            if(left != null){
+            if (left != null) {
                 left.printPostOrder();
             }
-            if(right!= null){
+            if (right != null) {
                 right.printPostOrder();
             }
-            System.out.print(this.value +" ");
+            System.out.print(this.value + " ");
 
         }
 
-        public static int height(Node node){
-            if(node == null){
+        public static int height(Node node) {
+            if (node == null) {
                 return 0;
-            }else{
+            } else {
                 int leftHeight = height(node.left);
                 int rightHeight = height(node.right);
 
                 if (leftHeight <= rightHeight) {
-                    return rightHeight +1;
-                }else return leftHeight+1;
+                    return rightHeight + 1;
+                } else return leftHeight + 1;
             }
         }
-        public void BFS(){
+
+        public void BFS() {
             Queue<Node> queue = new LinkedList<>();
             Node tempNode = this;
-            while(tempNode!= null){
-                System.out.print(tempNode.value+" ");
+            while (tempNode != null) {
+                System.out.print(tempNode.value + " ");
                 queue.add(tempNode.left);
                 queue.add(tempNode.right);
                 tempNode = queue.poll();
@@ -111,10 +127,32 @@ public class NormalTree {
         }
 
 
+        public boolean isBalanceTree(Node node, int depth) {
+            if (node.left == null) {
+                depthArr.add(depth);
+            }
+            if (node.right == null) {
+                depthArr.add(depth);
+            }
+            if (node.left != null) {
+                isBalanceTree(node.left, depth + 1);
+            }
+            if (node.right != null) {
+                isBalanceTree(node.right, depth + 1);
+            }
+            int maxDepth = Collections.max(depthArr);
+            int minDepth = Collections.min(depthArr);
+            if(maxDepth - minDepth <=1) return true;
+            else return false;
+        }
 
 
     }
+
+    public static List<Integer> depthArr = new ArrayList<>();
+
     static Queue<Node> queue = new LinkedList<>();
+
     public static void main(String[] args) {
         Node node = new Node(5);
         node.insert(3);
@@ -124,41 +162,28 @@ public class NormalTree {
         node.insert(7);
         node.insert(6);
         node.insert(8);
+        System.out.println("________________ Contain:");
         System.out.println(node.contains(5));
         System.out.println(node.contains(6));
         System.out.println(node.contains(10));
         System.out.println(node.contains(3));
-        System.out.println("Done");
+        System.out.println("_______________ Print:");
         node.printInOrder();
         System.out.println();
         node.printPreOrder();
         System.out.println();
         node.printPostOrder();
-        System.out.println();
+        System.out.println("_______________ Height:");
         System.out.println(Node.height(node));
-        System.out.println();
+        System.out.println("_______________ BFS:");
         node.BFS();
         System.out.println();
-        System.out.println("BFS1 walk");
-        BFS1(node);
+        System.out.println("_______________ Depth of tree to check balance:");
+        System.out.println(node.isBalanceTree(node,0));;
 
     }
-    public static void BFS1(Node node){
-        walk(node);
-        while(!queue.isEmpty()){
-            walk(queue.poll());
-        }
-    }
 
-    public static void walk(Node node){
-        System.out.print(node.value);
-        if(node.left != null){
-            queue.add(node.left);
-        }
-        if(node.right != null){
-            queue.add(node.right);
-        }
-    }
+
 }
 
 

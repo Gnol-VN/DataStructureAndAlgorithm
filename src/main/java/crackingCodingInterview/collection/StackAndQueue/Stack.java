@@ -1,4 +1,4 @@
-package crackingCodingInterview.StackAndQueue;
+package crackingCodingInterview.collection.StackAndQueue;
 
 
 /**

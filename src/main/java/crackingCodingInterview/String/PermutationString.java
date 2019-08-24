@@ -1,4 +1,4 @@
-package crackingCodingInterview.Chapter1ArrayAndString;
+package crackingCodingInterview.String;
 
 import java.util.Arrays;
 import java.util.Collections;
