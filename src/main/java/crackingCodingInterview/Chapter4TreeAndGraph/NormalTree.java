@@ -142,8 +142,8 @@ public class NormalTree {
             }
             int maxDepth = Collections.max(depthArr);
             int minDepth = Collections.min(depthArr);
-            if(maxDepth - minDepth <=1) return true;
-            else return false;
+            if(maxDepth - minDepth >1) return false;
+            else return true;
         }
 
 
@@ -156,7 +156,9 @@ public class NormalTree {
     public static void main(String[] args) {
         Node node = new Node(5);
         node.insert(3);
-//        node.insert(1);
+        node.insert(1);
+        node.insert(0);
+        node.insert(-1);
         node.insert(2);
         node.insert(4);
         node.insert(7);

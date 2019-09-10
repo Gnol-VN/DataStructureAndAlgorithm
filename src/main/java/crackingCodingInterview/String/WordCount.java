@@ -1,7 +1,6 @@
 package crackingCodingInterview.String;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WordCount {
     public static void main(String[] args) {
@@ -10,6 +9,15 @@ public class WordCount {
         actual.populateWordsToCounts(text);
         actual.getWordsToCounts();
         System.out.println("grape".compareToIgnoreCase("orange"));
+        HashSet<Integer> set = new HashSet<>();
+        set.add(7);
+        set.add(3);
+        set.add(4);
+        set.add(5);
+        set.add(2);
+        for(Integer i : set){
+            System.out.println(i);
+        }
 
     }
     public static class WordCloudData {
@@ -51,6 +59,7 @@ public class WordCount {
                 }
 
             }
+
 
             System.out.println();
         }
