@@ -33,6 +33,7 @@ public class Ancestor {
                     if (p.name.equals(split[1])) {
                         this.dad = p;
                     } else if (p.name.equals(split[2])) {
+
                         this.mom = p;
                     }
                 }
