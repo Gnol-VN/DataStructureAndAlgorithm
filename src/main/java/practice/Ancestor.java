@@ -2,6 +2,7 @@ package practice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Ancestor {
     static List<Person> list = new ArrayList<>();
@@ -33,6 +34,9 @@ public class Ancestor {
                     if (p.name.equals(split[1])) {
                         this.dad = p;
                     } else if (p.name.equals(split[2])) {
+
+                        Stack<Integer>  integers = new Stack<>();
+                        integers.pop();
 
                         this.mom = p;
                     }
