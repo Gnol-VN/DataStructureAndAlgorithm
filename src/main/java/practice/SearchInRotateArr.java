@@ -18,6 +18,7 @@ public class SearchInRotateArr {
         }
         if(arr[mid] > arr[mid+1]){
             list.add(mid);
+
             return;
         }
         else{
