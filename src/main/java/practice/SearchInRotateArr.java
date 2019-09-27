@@ -11,6 +11,7 @@ public class SearchInRotateArr {
         binarySearch(nums,0,nums.length-1,list);
         System.out.print(list.get(0));
     }
+
     private static  void binarySearch(int[] arr, int left, int right, List<Integer> list){
         int mid = (right - left)/2 + left;
         if(left == mid){
