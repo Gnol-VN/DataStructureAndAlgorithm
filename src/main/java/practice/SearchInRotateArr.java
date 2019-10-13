@@ -14,14 +14,12 @@ public class SearchInRotateArr {
 
     private static  void binarySearch(int[] arr, int left, int right, List<Integer> list){
         int mid = (right - left)/2 + left;
+
         if(left == mid){
             return;
         }
         if(arr[mid] > arr[mid+1]){
             list.add(mid);
-
-
-
             return;
         }
         else{
