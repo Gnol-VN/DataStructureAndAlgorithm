@@ -1,7 +1,9 @@
 package practice;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class SearchInRotateArr {
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class SearchInRotateArr {
 
     private static  void binarySearch(int[] arr, int left, int right, List<Integer> list){
         int mid = (right - left)/2 + left;
-
+        Stack<Character> stack1 = new Stack<>();
         if(left == mid){
             return;
         }
