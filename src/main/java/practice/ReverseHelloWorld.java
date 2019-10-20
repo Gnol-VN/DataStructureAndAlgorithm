@@ -10,6 +10,7 @@ public class ReverseHelloWorld {
                 builder.append(",");
                 arr[i] = arr[i].substring(0, arr[i].length()-1);
             }
+
             builder.append(arr[i]);
             builder.append(" ");
         }
