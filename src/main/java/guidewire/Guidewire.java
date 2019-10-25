@@ -43,6 +43,7 @@ public class Guidewire {
             else if(movieExt.contains(extension)) {
                 movieSize += Integer.valueOf(size);
             }
+
             else{
                 otherSize += Integer.valueOf(size);
             }
