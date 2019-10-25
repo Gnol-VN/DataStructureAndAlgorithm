@@ -48,6 +48,7 @@ public class Guidewire {
                 otherSize += Integer.valueOf(size);
             }
         }
+
         System.out.println("music "+musicSize+"b" +
                 "\nimages "+ imageSize+"b" +
                 "\nmovies "+ movieSize+"b" +
