@@ -16,7 +16,6 @@ public class SearchInRotateArr {
 
     private static  void binarySearch(int[] arr, int left, int right, List<Integer> list){
         int mid = (right - left)/2 + left;
-        Stack<Character> stack1 = new Stack<>();
         if(left == mid){
             return;
         }
@@ -28,6 +27,5 @@ public class SearchInRotateArr {
             binarySearch(arr,left,mid, list);
             binarySearch(arr,mid,right, list);
         }
-        return;
     }
 }
