@@ -34,7 +34,47 @@ public class StreamExample {
         });
         System.out.println("Long");
 
+        Rating rating = new Rating();
+        rating.add(new Review(6));
+        rating.add(new Review(8));
+        rating.add(new Review(10));
+        System.out.println(rating.avgPoint);
     }
 
 
+
+}
+class Rating{
+    List<Review> reviewList = new ArrayList<>();
+    double avgPoint;
+
+    void add(Review review){
+        reviewList.add(review);
+        computeAvgPoint();
+    }
+
+    void computeAvgPoint(){
+
+        int sum = reviewList.stream().map(review -> {
+            return review.points;
+        }).reduce(0,(i1,i2)->{
+            return i1+i2;
+        });
+        avgPoint = sum/reviewList.size();
+    }
+}
+class Review{
+    int points;
+
+    public Review(int points) {
+        this.points = points;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 }
